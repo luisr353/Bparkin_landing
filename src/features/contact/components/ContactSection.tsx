@@ -190,7 +190,7 @@ export default function ContactSection() {
               <MapPin className="h-12 w-12 mx-auto mb-4 text-blue-200" />
               <h3 className="text-2xl font-bold mb-4">Nuestra Ubicación</h3>
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Estamos estratégicamente ubicados en el centro de Barranquilla, 
+                Estamos estratégicamente ubicados Parqueadero Clinica Porto Azul Auna Sobre la carrera 51B, sobre el corredor universitario. 
                 con fácil acceso desde las principales vías de la ciudad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

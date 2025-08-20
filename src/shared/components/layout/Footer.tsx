@@ -13,12 +13,12 @@ export default function Footer() {
               <Image
                 src="/brand/IconBParkingWhite.png"
                 alt="BParking logo"
-                width={36}
-                height={36}
+                width={50}
+                height={50}
                 priority
               />
               </div>
-              <span className="text-2xl font-bold">BParking</span>
+              <span className="text-2xl font-bold">B-Parking</span>
             </div>
             <p className="text-gray-300 mb-4">
               Tu solución confiable para parqueadero en Barranquilla. Ofrecemos servicios de 

@@ -74,7 +74,7 @@ export default function HeroSection() {
           
           {/* Right content - Features card */}
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-6">¿Por qué elegir BParking?</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">¿Por qué elegir B-Parking?</h3>
             
             <div className="space-y-6">
               <div className="flex items-start space-x-4">

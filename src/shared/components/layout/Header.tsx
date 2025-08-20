@@ -26,7 +26,7 @@ export default function Header() {
               />
             </div>
             
-            <span className="text-2xl font-bold text-primary-800">BParking</span>
+            <span className="text-2xl font-bold text-primary-800">B-Parking</span>
           </a>
 
           {/* Desktop Navigation */}
