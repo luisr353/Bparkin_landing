@@ -1,7 +1,10 @@
 import { Car, Shield, Clock, MapPin } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
+import { useState } from 'react'
+import PricingModal from '@/features/parking/components/PricingModal'
 
 export default function HeroSection() {
+  const [openPricing, setOpenPricing] = useState(false)
   return (
     <section className="relative min-h-screen flex items-center">
       {/* Background with gradient */}
@@ -60,6 +63,7 @@ export default function HeroSection() {
                 variant="outline" 
                 size="lg" 
                 className="border-white text-white hover:bg-blue-50 hover:text-primary-600"
+                onClick={() => setOpenPricing(true)}
               >
                 Ver Precios
               </Button>
@@ -110,6 +114,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      <PricingModal open={openPricing} onClose={() => setOpenPricing(false)} />
     </section>
   )
 }
