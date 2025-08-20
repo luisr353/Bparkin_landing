@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'BParking - Alquiler de Parqueaderos en Barranquilla',
   description: 'Servicios de parqueadero por horas y publicidad en pantallas LED en Barranquilla. Carros desde $5.000 COP, motos desde $3.000 COP.',
   keywords: 'parqueadero, Barranquilla, alquiler, carros, motos, publicidad, pantalla LED',

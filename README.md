@@ -40,6 +40,14 @@ npm run build
 npm start
 ```
 
+### Variables de entorno
+
+Crea un archivo `.env.local` en la raíz para desarrollo:
+
+```
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
 ## Estructura del Proyecto
 
 ```
