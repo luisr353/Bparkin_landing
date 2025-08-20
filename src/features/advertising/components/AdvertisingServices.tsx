@@ -3,51 +3,46 @@ import Card from '@/shared/components/ui/Card'
 import Button from '@/shared/components/ui/Button'
 
 export default function AdvertisingServices() {
+  // Planes según brochure (30, 15, 7 días)
   const plans = [
     {
-      name: 'Plan Semanal',
-      duration: '7 días',
-      price: 'Consultar',
-      description: 'Perfect para promociones cortas y eventos especiales',
-      features: [
-        'Exposición durante 7 días consecutivos',
-        'Horarios de alta visibilidad',
-        'Diseño básico incluido',
-        'Reportes de exposición',
-        'Soporte técnico incluido'
-      ],
-      popular: false
+      label: '30 días',
+      investment: '$ 6.000.000',
+      iva: 'IVA incluido',
+      frequency: '1 minuto',
+      spotsPerDay: '1.140',
+      totalSpots: '34.200',
+      styles: {
+        card: 'bg-[#06254A] text-white',
+        badge: 'bg-white text-[#06254A]',
+        accent: 'bg-white text-[#06254A]'
+      }
     },
     {
-      name: 'Plan Quincenal',
-      duration: '15 días',
-      price: 'Consultar',
-      description: 'Ideal para campañas de marketing de mediano plazo',
-      features: [
-        'Exposición durante 15 días',
-        'Horarios premium disponibles',
-        'Diseño personalizado',
-        'Análisis de audiencia',
-        'Soporte prioritario',
-        'Modificaciones incluidas'
-      ],
-      popular: true
+      label: '15 días',
+      investment: '$ 4.000.000',
+      iva: 'IVA incluido',
+      frequency: '1 minuto',
+      spotsPerDay: '1.140',
+      totalSpots: '17.100',
+      styles: {
+        card: 'bg-sky-400 text-white',
+        badge: 'bg-white text-sky-600',
+        accent: 'bg-white text-sky-600'
+      }
     },
     {
-      name: 'Plan Mensual',
-      duration: '30 días',
-      price: 'Consultar',
-      description: 'La mejor opción para campañas publicitarias extensas',
-      features: [
-        'Exposición durante 30 días completos',
-        'Horarios premium garantizados',
-        'Diseño profesional incluido',
-        'Reportes detallados semanales',
-        'Soporte 24/7',
-        'Cambios ilimitados',
-        'Descuento por volumen'
-      ],
-      popular: false
+      label: '7 días',
+      investment: '$ 2.000.000',
+      iva: 'IVA incluido',
+      frequency: '1 minuto',
+      spotsPerDay: '1.140',
+      totalSpots: '7.980',
+      styles: {
+        card: 'bg-lime-400 text-white',
+        badge: 'bg-white text-lime-700',
+        accent: 'bg-white text-lime-700'
+      }
     }
   ]
 
@@ -113,50 +108,55 @@ export default function AdvertisingServices() {
           })}
         </div>
 
-        {/* Plans */}
+        {/* Anchor para el nav "Precios" */}
+        <div id="precios" className="sr-only" />
+
+        {/* Plans estilo brochure */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className={`relative ${plan.popular ? 'ring-2 ring-secondary-600 transform scale-105' : ''}`}
-              hover
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-secondary-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Más Popular
-                  </span>
+            <div key={index} className="relative">
+              <div className={`rounded-[28px] shadow-2xl p-8 pt-10 ${plan.styles.card}`}>                
+                {/* Etiqueta superior con los días */}
+                <div className="flex justify-center mb-8">
+                  <div className={`px-8 py-3 rounded-full font-extrabold text-xl ${plan.styles.badge}`}>
+                    {plan.label}
+                  </div>
                 </div>
-              )}
 
-              <div className="text-center mb-6">
-                <div className="flex items-center justify-center mb-2">
-                  <Calendar className="h-6 w-6 text-secondary-600 mr-2" />
-                  <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+                {/* Inversión */}
+                <div className="mb-8 text-center">
+                  <p className="opacity-90 font-semibold">Inversión</p>
+                  <p className="text-3xl font-extrabold tracking-tight">{plan.investment}</p>
+                  <p className="opacity-90 text-sm">{plan.iva}</p>
                 </div>
-                <p className="text-gray-600 mb-4">{plan.description}</p>
-                <div className="flex items-baseline justify-center space-x-2">
-                  <span className="text-3xl font-bold text-secondary-600">{plan.price}</span>
-                  <span className="text-gray-500">/ {plan.duration}</span>
+
+                {/* Lista de detalles */}
+                <div className="space-y-6 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <span className="mt-1 inline-block w-5 h-5 rounded-full border-2 border-white bg-transparent"></span>
+                    <div>
+                      <p className="font-bold">Frecuencia</p>
+                      <p className="text-sm opacity-90">{plan.frequency}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="mt-1 inline-block w-5 h-5 rounded-full border-2 border-white bg-transparent"></span>
+                    <div>
+                      <p className="font-bold">Numero de spots día</p>
+                      <p className="text-sm opacity-90">{plan.spotsPerDay}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Totales */}
+                <div className="text-center">
+                  <p className="font-extrabold uppercase tracking-wide opacity-95">Numero de spots totales</p>
+                  <div className={`mt-4 px-6 py-3 rounded-full text-2xl font-extrabold ${plan.styles.accent}`}>
+                    {plan.totalSpots}
+                  </div>
                 </div>
               </div>
-
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-secondary-600 rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button 
-                variant="secondary" 
-                className="w-full"
-              >
-                Solicitar Cotización
-              </Button>
-            </Card>
+            </div>
           ))}
         </div>
 
