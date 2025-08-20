@@ -44,16 +44,6 @@ export default function HeroSection() {
               
               <div className="flex items-center space-x-3">
                 <div className="bg-blue-500 p-2 rounded-lg">
-                  <Car className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Motos</p>
-                  <p className="text-sm text-blue-200">$3.000 COP</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="bg-blue-500 p-2 rounded-lg">
                   <Clock className="h-5 w-5 text-white" />
                 </div>
                 <div>
@@ -65,13 +55,11 @@ export default function HeroSection() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-blue-50">
-                Reservar Ahora
-              </Button>
+              
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-white hover:text-primary-600"
+                className="border-white text-white hover:bg-blue-50 hover:text-primary-600"
               >
                 Ver Precios
               </Button>
@@ -114,7 +102,7 @@ export default function HeroSection() {
                 <div className="text-white">
                   <h4 className="font-semibold mb-1">Ubicación Estratégica</h4>
                   <p className="text-blue-100 text-sm">
-                    En el corazón de Barranquilla, fácil acceso desde cualquier punto.
+                   Ingreso parqueadero Clinica Porto Azul Auna Sobre la carrera 51B, sobre el corredor universitario.
                   </p>
                 </div>
               </div>

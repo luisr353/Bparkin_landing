@@ -13,7 +13,7 @@ export default function Button({
   className = '',
   ...props 
 }: ButtonProps) {
-  const baseClasses = 'font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2'
+  const baseClasses = 'inline-flex items-center justify-center gap-2 font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2'
   
   const variantClasses = {
     primary: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500',

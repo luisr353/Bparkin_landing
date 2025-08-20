@@ -7,20 +7,20 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: 'Teléfono',
-      details: '+57 300 123 4567',
+      details: '+57 3108545652',
       description: 'Llámanos para reservas inmediatas'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@bparking.co',
+      details: 'comercial@bparkingsas.com',
       description: 'Escríbenos para cotizaciones'
     },
     {
       icon: MapPin,
       title: 'Ubicación',
-      details: 'Centro de Barranquilla',
-      description: 'Fácil acceso desde cualquier punto'
+      details: 'Parqueadero Clinica Porto Azul Auna Sobre la carrera 51B, sobre el corredor universitario.',
+      description: 'Fácil acceso'
     },
     {
       icon: Clock,
@@ -83,11 +83,16 @@ export default function ContactSection() {
                   ¿Necesitas ayuda inmediata?
                 </h4>
                 <p className="text-gray-600 mb-4">
-                  Nuestro equipo está disponible 24/7 para atender tus consultas
+                  Nuestro equipo comercial está disponible para atender tus consultas
                 </p>
-                <Button className="w-full">
-                  Llamar Ahora
-                </Button>
+                <a
+                  className="w-full inline-block text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                  href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contáctanos Ahora
+                </a>
               </div>
             </Card>
           </div>
@@ -150,7 +155,6 @@ export default function ContactSection() {
                 >
                   <option value="">Selecciona un servicio</option>
                   <option value="parking-cars">Parqueadero para Carros</option>
-                  <option value="parking-motorcycles">Parqueadero para Motos</option>
                   <option value="advertising-weekly">Publicidad - Plan Semanal</option>
                   <option value="advertising-biweekly">Publicidad - Plan Quincenal</option>
                   <option value="advertising-monthly">Publicidad - Plan Mensual</option>

@@ -16,15 +16,16 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <a href="#" className="flex items-center space-x-3">
-            <div className="p-1 rounded-md bg-primary-600">
+            <div className="p-1">
               <Image
-                src="/brand/bparking-logo.svg"
+                src="/brand/IconBParking.svg"
                 alt="BParking logo"
-                width={36}
-                height={36}
+                width={50}
+                height={50}
                 priority
               />
             </div>
+            
             <span className="text-2xl font-bold text-primary-800">BParking</span>
           </a>
 

@@ -1,4 +1,5 @@
 import { Car, MapPin, Phone, Mail, Clock } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -8,8 +9,14 @@ export default function Footer() {
           {/* Logo y descripción */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-primary-600 p-2 rounded-lg">
-                <Car className="h-6 w-6 text-white" />
+              <div className="">
+              <Image
+                src="/brand/IconBParkingWhite.png"
+                alt="BParking logo"
+                width={36}
+                height={36}
+                priority
+              />
               </div>
               <span className="text-2xl font-bold">BParking</span>
             </div>
@@ -40,11 +47,11 @@ export default function Footer() {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+57 300 123 4567</span>
+                <span>+57 3108545652</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>info@bparking.co</span>
+                <span>comercial@bparkingsas.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4" />
@@ -55,7 +62,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 BParking. Todos los derechos reservados.</p>
+          <p>&copy; B-Parking. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
