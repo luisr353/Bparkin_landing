@@ -1,3 +1,5 @@
+"use client"
+
 import { Car, Shield, Clock, MapPin } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
 import { useState } from 'react'
