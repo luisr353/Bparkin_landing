@@ -7,7 +7,7 @@ export default function ParkingServices() {
     {
       icon: Car,
       title: 'Parqueadero para Carros',
-      price: '$5.000 COP',
+      price: '$6.000 COP',
       period: 'por hora',
       features: [
         'Espacios amplios y seguros',
@@ -18,20 +18,6 @@ export default function ParkingServices() {
       ],
       color: 'primary'
     },
-    {
-      icon: Bike,
-      title: 'Parqueadero para Motos',
-      price: '$3.000 COP',
-      period: 'por hora',
-      features: [
-        'Espacios especializados',
-        'Seguridad garantizada',
-        'Acceso rápido',
-        'Tarifas preferenciales',
-        'Disponibilidad inmediata'
-      ],
-      color: 'secondary'
-    }
   ]
 
   const benefits = [
@@ -108,10 +94,8 @@ export default function ParkingServices() {
                 </ul>
 
                 <Button 
-                  className="w-full" 
-                  variant={service.color === 'primary' ? 'primary' : 'secondary'}
-                >
-                  Reservar {service.title.includes('Carros') ? 'Carro' : 'Moto'}
+                  className="w-full bg-primary-600 text-white hover:bg-primary-700" >
+                  Ver precios 
                 </Button>
               </Card>
             )

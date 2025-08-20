@@ -28,7 +28,7 @@ export default function PricingModal({ open, onClose }: PricingModalProps) {
             <tr>
               <td className="px-4 py-3">1 Hora</td>
               <td className="px-4 py-3 font-semibold">$6.000</td>
-              <td className="px-4 py-3 text-gray-500">-</td>
+             
             </tr>
             <tr>
               <td className="px-4 py-3">2 Horas</td>

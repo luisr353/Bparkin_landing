@@ -163,19 +163,18 @@ export default function AdvertisingServices() {
         {/* CTA Section */}
         <div className="mt-16 text-center bg-secondary-50 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            ¿Listo para hacer crecer tu negocio?
+          ¿Quieres que +34,000 clientes potenciales vean tu marca este mes?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Nuestro equipo de expertos te ayudará a crear la campaña publicitaria perfecta 
-            para tu marca. Contactanos para una consulta gratuita.
+          Nuestras pantallas ofrecen el costo por impacto más competitivo del mercado. Ocupa tu espacio antes que tu competencia y comienza a captar clientes desde el primer día.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg">
-              Consulta Gratuita
+                <a href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria.">
+            Reservar Mi Espacio
+            </a>
             </Button>
-            <Button variant="outline" size="lg">
-              Ver Ejemplos
-            </Button>
+            
           </div>
         </div>
       </div>

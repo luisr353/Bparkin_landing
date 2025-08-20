@@ -40,11 +40,10 @@ export default function Header() {
             <a href="#publicidad" className="text-gray-700 hover:text-primary-600 transition-colors">
               Publicidad
             </a>
-            <a href="#contacto" className="text-gray-700 hover:text-primary-600 transition-colors">
-              Contacto
-            </a>
             <Button size="sm">
-              Reservar Ahora
+              <a href="#contacto">
+                Contáctanos
+              </a>
             </Button>
           </nav>
 

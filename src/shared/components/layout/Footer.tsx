@@ -36,8 +36,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li>Parqueadero por Horas</li>
               <li>Estacionamiento Carros</li>
-              <li>Estacionamiento Motos</li>
-              <li>Publicidad LED</li>
+              <li>Pantalla LED</li>
             </ul>
           </div>
 
