@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X, Car } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import Button from '../ui/Button'
 
 export default function Header() {
@@ -14,12 +15,18 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-primary-600 p-2 rounded-lg">
-              <Car className="h-6 w-6 text-white" />
+          <a href="#" className="flex items-center space-x-3">
+            <div className="p-1 rounded-md bg-primary-600">
+              <Image
+                src="/brand/bparking-logo.svg"
+                alt="BParking logo"
+                width={36}
+                height={36}
+                priority
+              />
             </div>
             <span className="text-2xl font-bold text-primary-800">BParking</span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
