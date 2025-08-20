@@ -18,7 +18,7 @@ export default function Header() {
           <a href="#" className="flex items-center space-x-3">
             <div className="p-1">
               <Image
-                src="/brand/IconBParking.svg"
+                src="/brand/IconBparking.svg"
                 alt="BParking logo"
                 width={50}
                 height={50}
