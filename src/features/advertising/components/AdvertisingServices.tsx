@@ -13,9 +13,9 @@ export default function AdvertisingServices() {
       spotsPerDay: '1.140',
       totalSpots: '34.200',
       styles: {
-        card: 'bg-[#06254A] text-white',
-        badge: 'bg-white text-[#06254A]',
-        accent: 'bg-white text-[#06254A]'
+        card: 'bg-secondary-900 text-white',
+        badge: 'bg-white text-secondary-900',
+        accent: 'bg-white text-secondary-900'
       }
     },
     {
@@ -26,9 +26,9 @@ export default function AdvertisingServices() {
       spotsPerDay: '1.140',
       totalSpots: '17.100',
       styles: {
-        card: 'bg-sky-400 text-white',
-        badge: 'bg-white text-sky-600',
-        accent: 'bg-white text-sky-600'
+        card: 'bg-primary-400 text-white',
+        badge: 'bg-white text-primary-700',
+        accent: 'bg-white text-primary-700'
       }
     },
     {
@@ -39,9 +39,9 @@ export default function AdvertisingServices() {
       spotsPerDay: '1.140',
       totalSpots: '7.980',
       styles: {
-        card: 'bg-lime-400 text-white',
-        badge: 'bg-white text-lime-700',
-        accent: 'bg-white text-lime-700'
+        card: 'bg-accent-400 text-white',
+        badge: 'bg-white text-accent-700',
+        accent: 'bg-white text-accent-700'
       }
     }
   ]
