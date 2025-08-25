@@ -50,27 +50,28 @@ export default function AdvertisingServices() {
     {
       icon: Users,
       title: 'Alta Visibilidad',
-      description: 'Miles de personas ven tu anuncio diariamente en nuestra ubicación estratégica.'
+      description: 'Miles de personas ven tu anuncio diariamente en nuestra ubicación estratégica en el corredor universitario.'
     },
     {
       icon: Target,
       title: 'Audiencia Local',
-      description: 'Llega directamente a tu mercado objetivo en Barranquilla y sus alrededores.'
+      description: 'Llega directamente a tu mercado objetivo en Barranquilla y sus alrededores con máxima exposición.'
     },
     {
       icon: Zap,
-      title: 'Tecnología LED',
-      description: 'Pantallas LED de alta resolución que garantizan la mejor calidad visual.'
+      title: 'Tecnología LED 11.1 m²',
+      description: 'Pantalla LED de alta resolución de 11.1 metros cuadrados que garantiza la mejor calidad visual y máximo impacto.'
     },
     {
       icon: TrendingUp,
       title: 'ROI Comprobado',
-      description: 'Nuestros clientes reportan un aumento significativo en sus ventas.'
+      description: 'Nuestros clientes reportan un aumento significativo en sus ventas gracias a la alta visibilidad de la pantalla.'
     }
   ]
 
   return (
     <section id="publicidad" className="py-20 bg-white">
+      {/* Banner destacado de la pantalla LED */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -80,39 +81,25 @@ export default function AdvertisingServices() {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Publicidad en Pantalla LED
+            Publicidad en Pantalla LED de 11.1 m²
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Potencia tu marca con nuestra pantalla publicitaria LED ubicada estratégicamente 
-            en Barranquilla. Alcanza a miles de personas cada día.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+            Potencia tu marca con nuestra pantalla publicitaria LED de <strong>11.1 metros cuadrados</strong> ubicada estratégicamente 
+            en Barranquilla. Alcanza a miles de personas cada día con el mayor impacto visual de la ciudad.
           </p>
+          <div className="bg-secondary-50 rounded-xl p-4 inline-block">
+            <p className="text-lg font-semibold text-secondary-700">
+              🎯 Pantalla LED de 11.1 m² • Ubicación Premium • Máxima Visibilidad
+            </p>
+          </div>
         </div>
-
-        {/* Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {benefits.map((benefit, index) => {
-            const IconComponent = benefit.icon
-            return (
-              <div key={index} className="text-center">
-                <div className="bg-secondary-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <IconComponent className="h-8 w-8 text-secondary-600" />
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  {benefit.title}
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  {benefit.description}
-                </p>
-              </div>
-            )
-          })}
-        </div>
+        
 
         {/* Anchor para el nav "Precios" */}
         <div id="precios" className="sr-only" />
 
         {/* Plans estilo brochure */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => (
             <div key={index} className="relative">
               <div className={`rounded-[28px] shadow-2xl p-8 pt-10 ${plan.styles.card}`}>                
@@ -123,12 +110,13 @@ export default function AdvertisingServices() {
                   </div>
                 </div>
 
-                {/* Inversión */}
+                  {/* Inversión 
                 <div className="mb-8 text-center">
                   <p className="opacity-90 font-semibold">Inversión</p>
                   <p className="text-3xl font-extrabold tracking-tight">{plan.investment}</p>
                   <p className="opacity-90 text-sm">{plan.iva}</p>
                 </div>
+                */}
 
                 {/* Lista de detalles */}
                 <div className="space-y-6 mb-8">
@@ -159,19 +147,40 @@ export default function AdvertisingServices() {
             </div>
           ))}
         </div>
+        
+{/* Benefits */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {benefits.map((benefit, index) => {
+            const IconComponent = benefit.icon
+            return (
+              <div key={index} className="text-center">
+                <div className="bg-secondary-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <IconComponent className="h-8 w-8 text-secondary-600" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  {benefit.title}
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  {benefit.description}
+                </p>
+              </div>
+            )
+          })}
+        </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center bg-secondary-50 rounded-2xl p-8">
+        <div className="mt-16 text-center bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 border border-secondary-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          ¿Quieres que +34,000 clientes potenciales vean tu marca este mes?
+            ¿Quieres que +34,000 clientes potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-          Nuestras pantallas ofrecen el costo por impacto más competitivo del mercado. Ocupa tu espacio antes que tu competencia y comienza a captar clientes desde el primer día.
+            Nuestra pantalla LED de 11.1 metros cuadrados ofrece el costo por impacto más competitivo del mercado. 
+            Ocupa tu espacio antes que tu competencia y comienza a captar clientes desde el primer día con la máxima visibilidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg">
-                <a href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria.">
-            Reservar Mi Espacio
+                <a href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria%20LED%20de%2011.1%20m².">
+            Reservar Mi Espacio en la Pantalla LED
             </a>
             </Button>
             

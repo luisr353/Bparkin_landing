@@ -87,7 +87,7 @@ export default function ContactSection() {
                 </p>
                 <a
                   className="w-full inline-block text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                  href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria."
+                  href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria%20LED%20de%2011.1%20m²."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -194,7 +194,7 @@ export default function ContactSection() {
                 con fácil acceso desde las principales vías de la ciudad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-primary-600 hover:bg-blue-50">
+                <Button className="bg-white text-blue-600 hover:bg-blue-50">
                   Ver en Google Maps
                 </Button>
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary-600">
