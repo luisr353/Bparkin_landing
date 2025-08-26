@@ -194,11 +194,8 @@ export default function ContactSection() {
                 con fácil acceso desde las principales vías de la ciudad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-blue-600 hover:bg-blue-50">
-                  Ver en Google Maps
-                </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary-600">
-                  Obtener Direcciones
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Ver en Google Maps
                 </Button>
               </div>
             </div>
