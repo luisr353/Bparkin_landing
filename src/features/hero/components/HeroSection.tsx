@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl">
           <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight drop-shadow-md">
-            ¿Quieres que <span className="text-blue-200">+34,000</span> clientes potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
+            ¿Quieres que <span className="bg-primary-200 px-2 rounded">+34,000 clientes</span> potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
           </h1>
           <div className="mt-8 flex justify-center">
             <a href="#contacto">

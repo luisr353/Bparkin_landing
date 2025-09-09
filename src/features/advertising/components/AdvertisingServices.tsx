@@ -171,7 +171,7 @@ export default function AdvertisingServices() {
         {/* CTA Section */}
         <div className="mt-16 text-center bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 border border-secondary-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            ¿Quieres que +34,000 clientes potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
+            ¿Quieres que <span className="bg-primary-200 px-2 rounded">+34,000 clientes</span> potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             Nuestra pantalla LED de 11.1 metros cuadrados ofrece el costo por impacto más competitivo del mercado. 
