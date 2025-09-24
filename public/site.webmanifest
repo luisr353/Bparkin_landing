@@ -1,0 +1,21 @@
+{
+  "name": "BParking",
+  "short_name": "BParking",
+  "icons": [
+    {
+      "src": "/brand/IconBparkingWhite.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/IconBparkingWhite.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1FA3D4",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
+
+

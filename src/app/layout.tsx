@@ -10,6 +10,15 @@ export const metadata: Metadata = {
     title: 'BParking - Alquiler de Parqueaderos en Barranquilla',
     description: 'Servicios de parqueadero por horas y publicidad en pantallas LED',
     type: 'website',
+  },
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/brand/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/brand/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: [{ url: '/brand/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: ['/brand/favicon.ico'],
   }
 }
 
