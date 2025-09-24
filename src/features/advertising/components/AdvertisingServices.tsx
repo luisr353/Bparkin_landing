@@ -94,7 +94,6 @@ export default function AdvertisingServices() {
           </div>
         </div>
         
-
         {/* Anchor para el nav "Precios" */}
         <div id="precios" className="sr-only" />
 
