@@ -1,5 +1,3 @@
-"use client"
-
 import { Monitor } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
 import { plans, benefits } from '@/features/advertising/data/advertisingData'
