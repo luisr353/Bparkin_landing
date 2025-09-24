@@ -1,3 +1,4 @@
+import { Monitor } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
 import { plans, benefits } from '@/features/advertising/data/advertisingData'
 
@@ -10,7 +11,7 @@ export default function AdvertisingServices() {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <div className="bg-secondary-100 p-4 rounded-full">
-              
+              <Monitor className="h-12 w-12 text-secondary-600" />
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
