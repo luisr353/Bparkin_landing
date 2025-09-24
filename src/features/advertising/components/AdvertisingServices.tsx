@@ -1,5 +1,4 @@
-import { Monitor, TrendingUp, Users, Zap, Calendar, Target } from 'lucide-react'
-import Card from '@/shared/components/ui/Card'
+import { Monitor, TrendingUp, Users, Zap, Target } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
 
 export default function AdvertisingServices() {
