@@ -1,3 +1,5 @@
+"use client"
+
 import { Monitor, TrendingUp, Users, Zap, Target } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
 
@@ -107,15 +109,6 @@ export default function AdvertisingServices() {
                     {plan.label}
                   </div>
                 </div>
-
-                  {/* Inversión 
-                <div className="mb-8 text-center">
-                  <p className="opacity-90 font-semibold">Inversión</p>
-                  <p className="text-3xl font-extrabold tracking-tight">{plan.investment}</p>
-                  <p className="opacity-90 text-sm">{plan.iva}</p>
-                </div>
-                */}
-
                 {/* Lista de detalles */}
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start space-x-3">
@@ -176,12 +169,15 @@ export default function AdvertisingServices() {
             Ocupa tu espacio antes que tu competencia y comienza a captar clientes desde el primer día con la máxima visibilidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg">
-                <a href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria%20LED%20de%2011.1%20m².">
-            Reservar Mi Espacio en la Pantalla LED
+            <a
+              href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria%20LED%20de%2011.1%20m²."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="secondary" size="lg">
+                Reservar Mi Espacio en la Pantalla LED
+              </Button>
             </a>
-            </Button>
-            
           </div>
         </div>
       </div>
