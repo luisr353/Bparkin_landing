@@ -4,7 +4,7 @@ import { plans, benefits } from '@/features/advertising/data/advertisingData'
 
 export default function AdvertisingServices() {
   return (
-    <section id="servicios" className="relative z-10 py-20 bg-white">
+    <section id="publicidadv" className="relative z-10 py-20 bg-white">
       {/* Banner destacado de la pantalla LED */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

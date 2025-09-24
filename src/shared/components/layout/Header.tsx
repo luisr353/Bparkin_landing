@@ -26,7 +26,7 @@ export default function Header() {
               />
             </div>
             
-            <span className="text-2xl font-bold text-primary-800">B-Parking</span>
+            <span className="text-2xl font-bold text-secondary-700">B-Parking</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -34,11 +34,11 @@ export default function Header() {
             <a href="#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
               Servicios
             </a>
+            <a href="#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
+              Publicidad
+            </a>
             <a href="#precios" className="text-gray-700 hover:text-primary-600 transition-colors">
               Precios
-            </a>
-            <a href="#publicidad" className="text-gray-700 hover:text-primary-600 transition-colors">
-              Publicidad
             </a>
             <Button size="sm">
               <a href="#contacto">
@@ -60,14 +60,14 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
+            <a href="#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
+                Publicidad
+              </a>
               <a href="#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Servicios
               </a>
               <a href="#precios" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Precios
-              </a>
-              <a href="#publicidad" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Publicidad
               </a>
               <a href="#contacto" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Contacto
