@@ -37,9 +37,6 @@ export default function Header() {
             <a href="#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
               Publicidad
             </a>
-            <a href="#precios" className="text-gray-700 hover:text-primary-600 transition-colors">
-              Precios
-            </a>
             <Button size="sm">
               <a href="#contacto">
                 Contáctanos
@@ -65,9 +62,6 @@ export default function Header() {
               </a>
               <a href="#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Servicios
-              </a>
-              <a href="#precios" className="text-gray-700 hover:text-primary-600 transition-colors">
-                Precios
               </a>
               <a href="#contacto" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Contacto
