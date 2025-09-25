@@ -1,5 +1,6 @@
 import { Monitor } from 'lucide-react'
 import Button from '@/shared/components/ui/Button'
+import FadeIn from '@/shared/components/ui/FadeIn'
 import { plans, benefits } from '@/features/advertising/data/advertisingData'
 
 export default function AdvertisingServices() {
@@ -14,18 +15,20 @@ export default function AdvertisingServices() {
               <Monitor className="h-12 w-12 text-secondary-600" />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Publicidad en Pantalla LED de 11.1 m²
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Potencia tu marca con nuestra pantalla publicitaria LED de <strong>11.1 metros cuadrados</strong> ubicada estratégicamente 
-            en Barranquilla. Alcanza a miles de personas cada día con el mayor impacto visual de la ciudad.
-          </p>
-          <div className="bg-secondary-50 rounded-xl p-4 inline-block">
-            <p className="text-lg font-semibold text-secondary-700">
-              🎯 Pantalla LED de 11.1 m² • Ubicación Premium • Máxima Visibilidad
+          <FadeIn y={20}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Publicidad en Pantalla LED de 11.1 m²
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+              Potencia tu marca con nuestra pantalla publicitaria LED de <strong>11.1 metros cuadrados</strong> ubicada estratégicamente 
+              en Barranquilla. Alcanza a miles de personas cada día con el mayor impacto visual de la ciudad.
             </p>
-          </div>
+            <div className="bg-secondary-50 rounded-xl p-4 inline-block">
+              <p className="text-lg font-semibold text-secondary-700">
+                🎯 Pantalla LED de 11.1 m² • Ubicación Premium • Máxima Visibilidad
+              </p>
+            </div>
+          </FadeIn>
         </div>
         
         {/* Anchor para el nav "Precios" */}
@@ -34,7 +37,7 @@ export default function AdvertisingServices() {
         {/* Plans estilo brochure */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => (
-            <div key={index} className="relative">
+            <FadeIn key={index} className="relative" delay={0.05 * index}>
               <div className={`rounded-[28px] shadow-2xl p-8 pt-10 ${plan.styles.card}`}>                
                 {/* Etiqueta superior con los días */}
                 <div className="flex justify-center mb-8">
@@ -68,7 +71,7 @@ export default function AdvertisingServices() {
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
         
@@ -77,7 +80,7 @@ export default function AdvertisingServices() {
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon
             return (
-              <div key={index} className="text-center">
+              <FadeIn key={index} className="text-center" delay={0.05 * index}>
                 <div className="bg-secondary-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <IconComponent className="h-8 w-8 text-secondary-600" />
                 </div>
@@ -87,7 +90,7 @@ export default function AdvertisingServices() {
                 <p className="text-gray-600 text-sm">
                   {benefit.description}
                 </p>
-              </div>
+              </FadeIn>
             )
           })}
         </div>
@@ -107,7 +110,7 @@ export default function AdvertisingServices() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" className="transition-base hover-raise">
                 Reservar Mi Espacio en la Pantalla LED
               </Button>
             </a>

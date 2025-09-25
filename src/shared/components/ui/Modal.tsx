@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect } from 'react'
 import { X } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface ModalProps {
   open: boolean
@@ -36,9 +37,14 @@ export default function Modal({ open, onClose, title, children, size = 'md' }: M
       aria-modal="true"
       aria-labelledby={title ? 'modal-title' : undefined}
     >
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <motion.div className="absolute inset-0 bg-black/50" onClick={onClose} initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
       <div className="relative h-full w-full flex items-center justify-center p-4">
-        <div className={`w-full ${sizeClasses[size]} bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden`}>
+        <motion.div
+          className={`w-full ${sizeClasses[size]} bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden`}
+          initial={{ opacity: 0, y: 16, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+        >
           <div className="flex items-center justify-between px-6 py-4 border-b">
             {title ? (
               <h3 id="modal-title" className="text-lg sm:text-xl font-bold text-gray-900">{title}</h3>
@@ -54,7 +60,7 @@ export default function Modal({ open, onClose, title, children, size = 'md' }: M
           <div className="p-6">
             {children}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

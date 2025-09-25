@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send } from 'lucide-react'
 import Card from '@/shared/components/ui/Card'
 import Button from '@/shared/components/ui/Button'
+import FadeIn from '@/shared/components/ui/FadeIn'
 
 export default function ContactSection() {
   const contactInfo = [
@@ -35,13 +36,15 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Contáctanos
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ¿Tienes preguntas sobre nuestros servicios? Estamos aquí para ayudarte. 
-            Contactanos por cualquiera de nuestros canales de comunicación.
-          </p>
+          <FadeIn y={16}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Contáctanos
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              ¿Tienes preguntas sobre nuestros servicios? Estamos aquí para ayudarte. 
+              Contactanos por cualquiera de nuestros canales de comunicación.
+            </p>
+          </FadeIn>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -55,7 +58,7 @@ export default function ContactSection() {
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon
                 return (
-                  <div key={index} className="flex items-start space-x-4">
+                  <FadeIn key={index} className="flex items-start space-x-4" delay={0.05 * index}>
                     <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
                       <IconComponent className="h-6 w-6 text-primary-600" />
                     </div>
@@ -70,13 +73,14 @@ export default function ContactSection() {
                         {info.description}
                       </p>
                     </div>
-                  </div>
+                  </FadeIn>
                 )
               })}
             </div>
 
             {/* Quick Actions */}
-            <Card className="bg-primary-50 border-primary-200">
+            <FadeIn>
+              <Card className="bg-primary-50 border-primary-200">
               <div className="text-center">
                 <MessageSquare className="h-12 w-12 text-primary-600 mx-auto mb-4" />
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
@@ -94,7 +98,8 @@ export default function ContactSection() {
                   Contáctanos Ahora
                 </a>
               </div>
-            </Card>
+              </Card>
+            </FadeIn>
           </div>
 
           {/* Contact Form */}
@@ -175,7 +180,7 @@ export default function ContactSection() {
                 ></textarea>
               </div>
 
-              <Button type="submit" className="w-full" size="lg">
+              <Button type="submit" className="w-full transition-base hover-raise" size="lg">
                 <Send className="h-5 w-5 mr-2" />
                 Enviar Mensaje
               </Button>
@@ -194,7 +199,7 @@ export default function ContactSection() {
                 con fácil acceso desde las principales vías de la ciudad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:!text-secondary-700">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:!text-secondary-700 transition-base hover-raise">
                 Ver en Google Maps
                 </Button>
               </div>

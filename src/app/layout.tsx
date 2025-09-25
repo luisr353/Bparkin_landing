@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import PageTransition from '@/shared/components/layout/PageTransition'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -29,7 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <PageTransition>
+          {children}
+        </PageTransition>
+      </body>
     </html>
   )
 }

@@ -5,6 +5,7 @@ import Card from '@/shared/components/ui/Card'
 import Button from '@/shared/components/ui/Button'
 import { useState } from 'react'
 import PricingModal from './PricingModal'
+import FadeIn from '@/shared/components/ui/FadeIn'
 
 export default function ParkingServices() {
   const [openPricing, setOpenPricing] = useState(false)
@@ -19,13 +20,15 @@ export default function ParkingServices() {
           {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Nuestros Servicios de Parqueadero
-          </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
-            Ofrecemos soluciones de estacionamiento seguro y confiable en Barranquilla, 
-            con tarifas competitivas y servicios de calidad.
-          </p>
+          <FadeIn y={16}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Nuestros Servicios de Parqueadero
+            </h2>
+            <p className="text-xl text-white max-w-3xl mx-auto">
+              Ofrecemos soluciones de estacionamiento seguro y confiable en Barranquilla, 
+              con tarifas competitivas y servicios de calidad.
+            </p>
+          </FadeIn>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
@@ -40,14 +43,14 @@ export default function ParkingServices() {
               <span className="block text-blue-200">Seguro y Confiable</span>
             </h1>
             
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+            <FadeIn as="p" className="text-xl text-blue-100 mb-8 leading-relaxed" y={12}>
               Encuentra el espacio perfecto para tu vehículo en Barranquilla. 
               Tarifas competitivas, seguridad garantizada y disponibilidad 24/7.
-            </p>
+            </FadeIn>
             
             {/* Features */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              <div className="flex items-center space-x-3">
+              <FadeIn className="flex items-center space-x-3" delay={0.05}>
                 <div className="bg-blue-500 p-2 rounded-lg">
                   <Car className="h-5 w-5 text-white" />
                 </div>
@@ -55,9 +58,9 @@ export default function ParkingServices() {
                   <p className="font-semibold">Carros</p>
                   <p className="text-sm text-blue-200">$6.000 COP</p>
                 </div>
-              </div>
+              </FadeIn>
               
-              <div className="flex items-center space-x-3">
+              <FadeIn className="flex items-center space-x-3" delay={0.1}>
                 <div className="bg-blue-500 p-2 rounded-lg">
                   <Clock className="h-5 w-5 text-white" />
                 </div>
@@ -65,7 +68,7 @@ export default function ParkingServices() {
                   <p className="font-semibold">24/7</p>
                   <p className="text-sm text-blue-200">Disponible</p>
                 </div>
-              </div>
+              </FadeIn>
             </div>
             
             {/* CTA Buttons */}
@@ -74,7 +77,7 @@ export default function ParkingServices() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-blue-50 hover:text-primary-600"
+                className="border-white text-white hover:bg-blue-50 hover:text-primary-600 transition-base hover-raise"
                 onClick={() => setOpenPricing(true)}
               >
                 Ver Precios

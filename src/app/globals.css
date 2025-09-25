@@ -7,6 +7,7 @@
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
   }
   
   body {
@@ -15,6 +16,16 @@
 }
 
 @layer components {
+  /* Transiciones por defecto para elementos interactivos */
+  .transition-base {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Estados comunes */
+  .hover-raise {
+    @apply hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
   .btn-primary {
     @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
   }
