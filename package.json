@@ -2,6 +2,7 @@
   "name": "bparking-landing",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.2.23",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,6 +25,7 @@
     "typescript": "^5"
   },
   "devDependencies": {
+    "@types/react-google-recaptcha": "^2.1.9",
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
   }

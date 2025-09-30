@@ -24,21 +24,33 @@ Landing page para BParking, empresa de alquiler de parqueaderos en Barranquilla.
 - Screaming Architecture
 - Lucide React Icons
 
-## Instalación
+## Instalación (Bun)
 
 ```bash
 # Instalar dependencias
-npm install
+bun install
 
 # Ejecutar en desarrollo
-npm run dev
+bun run dev
 
 # Construir para producción
-npm run build
+bun run build
 
 # Ejecutar en producción
-npm start
+bun run start
 ```
+
+Notas:
+- El proyecto usa Bun como package manager (`packageManager: bun@1.2.23`) y `bun.lockb`.
+- Asegúrate de no commitear `package-lock.json` ni `yarn.lock` para evitar conflictos con Vercel.
+
+### Despliegue en Vercel
+
+- `vercel.json` ya define:
+  - installCommand: `bun install`
+  - buildCommand: `bun run build`
+  
+Si usas la UI de Vercel, verifica en Project Settings → Build & Development Settings que coincidan estos comandos.
 
 ### Variables de entorno
 
@@ -46,6 +58,7 @@ Crea un archivo `.env.local` en la raíz para desarrollo:
 
 ```
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_clave_publica
 ```
 
 ## Estructura del Proyecto
