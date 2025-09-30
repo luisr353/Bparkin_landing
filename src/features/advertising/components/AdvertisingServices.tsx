@@ -17,10 +17,10 @@ export default function AdvertisingServices() {
           </div>
           <FadeIn y={20}>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Publicidad en Pantalla LED de 11.1 m²
+              Publicidad en Pantalla LED de 13.82 m²
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-              Potencia tu marca con nuestra pantalla publicitaria LED de <strong>11.1 metros cuadrados</strong> ubicada estratégicamente 
+              Potencia tu marca con nuestra pantalla publicitaria ubicada estratégicamente 
               en Barranquilla. Alcanza a miles de personas cada día con el mayor impacto visual de la ciudad.
             </p>
             <div className="bg-secondary-50 rounded-xl p-4 inline-block">
@@ -98,10 +98,10 @@ export default function AdvertisingServices() {
         {/* CTA Section */}
         <div className="mt-16 text-center bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 border border-secondary-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            ¿Quieres que <span className="bg-primary-200 px-2 rounded">+34,000 clientes</span> potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
+            ¿Quieres que <span className="bg-primary-200 px-2 rounded">+139.346 clientes</span> potenciales vean tu marca en nuestra pantalla LED de 13.82 m²?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Nuestra pantalla LED de 11.1 metros cuadrados ofrece el costo por impacto más competitivo del mercado. 
+            Nuestra pantalla LED ofrece el costo por impacto más competitivo del mercado. 
             Ocupa tu espacio antes que tu competencia y comienza a captar clientes desde el primer día con la máxima visibilidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -55,8 +55,8 @@ export const benefits = [
   },
   {
     icon: Zap,
-    title: 'Tecnología LED 11.1 m²',
-    description: 'Pantalla LED de alta resolución de 11.1 metros cuadrados que garantiza la mejor calidad visual y máximo impacto.'
+    title: 'Tecnología LED 13.82 m²',
+    description: 'Pantalla LED de alta resolución de 13.80 metros cuadrados que garantiza la mejor calidad visual y máximo impacto.'
   },
   {
     icon: TrendingUp,

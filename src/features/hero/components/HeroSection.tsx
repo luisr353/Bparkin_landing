@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10 flex items-end justify-center pb-32 px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl md:max-w-2xl lg:max-w-4xl">
         <FadeIn className="text-center max-w-4xl" y={24}>
           <h1 className="text-white text-3xl sm:text-2xl lg:text-4xl font-extrabold leading-tight drop-shadow-md">
-            ¿Quieres que <span className="bg-primary-500 px-2 rounded text-secondary-700">+139.346 clientes</span> potenciales vean tu marca en nuestra pantalla LED de 11.1 m²?
+            ¿Quieres que <span className="bg-primary-500 px-2 rounded text-secondary-700">+139.346 clientes</span> potenciales vean tu marca en nuestra pantalla LED de 13.82 m²?
           </h1>
           <div className="mt-8 flex justify-center">
             <a href="#contacto">
