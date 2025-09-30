@@ -56,12 +56,13 @@ export async function POST(req: Request) {
 
     // Archivos (pueden venir con la clave 'files')
     const files: Array<{ filename: string; contentType: string; base64: string }> = []
-    for (const [key, value] of form.entries()) {
-      if (key === 'files' && value instanceof File) {
-        const file = value
-        const ab = await file.arrayBuffer()
+    const fileEntries = form.getAll('files')
+    for (let i = 0; i < fileEntries.length; i++) {
+      const value = fileEntries[i]
+      if (value instanceof File) {
+        const ab = await value.arrayBuffer()
         const base64 = Buffer.from(ab).toString('base64')
-        files.push({ filename: file.name, contentType: file.type || 'application/octet-stream', base64 })
+        files.push({ filename: value.name, contentType: value.type || 'application/octet-stream', base64 })
       }
     }
 
