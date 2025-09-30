@@ -85,17 +85,6 @@ export default function PqrPage() {
     if (!validate()) return
     setSubmitting(true)
     try {
-      // Validar reCAPTCHA en el servidor antes de proceder
-      const verify = await fetch('/api/recaptcha', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: recaptchaToken }),
-      }).then((r) => r.json()).catch(() => ({ success: false }))
-
-      if (!verify?.success) {
-        setErrors((prev) => ({ ...prev, recaptcha: 'No pudimos validar el reCAPTCHA. Inténtalo nuevamente.' }))
-        return
-      }
       // Enviar PQR a API interna que integra con Power Automate
       const formData = new FormData()
       formData.append('name', data.name)
@@ -113,8 +102,14 @@ export default function PqrPage() {
       const res = await fetch('/api/pqr', { method: 'POST', body: formData })
       const json = await res.json().catch(() => ({}))
       if (!res.ok || !json?.success) {
-        setErrors((prev) => ({ ...prev, recaptcha: undefined }))
-        alert('No pudimos registrar tu PQR. Intenta nuevamente en unos minutos.')
+        const errorCodes = (json?.errorCodes ?? json?.details?.['error-codes']) as string[] | undefined
+        if (errorCodes?.includes('timeout-or-duplicate')) {
+          setErrors((prev) => ({ ...prev, recaptcha: 'El token de reCAPTCHA expiró o fue reutilizado. Refresca el reCAPTCHA y envía de nuevo.' }))
+          recaptchaRef.current?.reset()
+          setRecaptchaToken(null)
+          return
+        }
+        setErrors((prev) => ({ ...prev, recaptcha: 'No pudimos validar el reCAPTCHA. Intenta nuevamente.' }))
         return
       }
 
