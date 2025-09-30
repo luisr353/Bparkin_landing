@@ -25,7 +25,7 @@ export default function AdvertisingServices() {
             </p>
             <div className="bg-secondary-50 rounded-xl p-4 inline-block">
               <p className="text-lg font-semibold text-secondary-700">
-                🎯 Pantalla LED de 11.1 m² • Ubicación Premium • Máxima Visibilidad
+                🎯 Ubicación Premium • Máxima Visibilidad
               </p>
             </div>
           </FadeIn>
