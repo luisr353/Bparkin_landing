@@ -15,7 +15,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-3">
+          <a href="/" className="flex items-center space-x-3">
             <div className="p-1">
               <Image
                 src="/brand/IconBparking.svg"
@@ -31,17 +31,17 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
+            <a href="/#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
               Parqueadero
             </a>
-            <a href="#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
+            <a href="/#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
               Publicidad
             </a>
             <a href="/pqr" className="text-gray-700 hover:text-primary-600 transition-colors">
               PQR
             </a>
             <Button size="sm">
-              <a href="#contacto">
+              <a href="/#contacto">
                 Contáctanos
               </a>
             </Button>
@@ -60,16 +60,16 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
-            <a href="#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
+            <a href="/#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Publicidad
               </a>
-              <a href="#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
+              <a href="/#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Servicios
               </a>
               <a href="/pqr" className="text-gray-700 hover:text-primary-600 transition-colors">
                 PQR
               </a>
-              <a href="#contacto" className="text-gray-700 hover:text-primary-600 transition-colors">
+              <a href="/#contacto" className="text-gray-700 hover:text-primary-600 transition-colors">
                 Contacto
               </a>
               <Button className="w-full">
