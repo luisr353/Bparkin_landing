@@ -11,7 +11,7 @@ import Footer from '@/shared/components/layout/Footer'
 interface FormDataState {
   name: string
   documentType: string
-  document: string
+  document: number
   phone: string
   email: string
   plateOrTicket: string
@@ -38,7 +38,7 @@ export default function PqrPage() {
   const [data, setData] = useState<FormDataState>({
     name: '',
     documentType: '',
-    document: '',
+    document: NaN,
     phone: '',
     email: '',
     plateOrTicket: '',
@@ -63,7 +63,7 @@ export default function PqrPage() {
 
     if (!data.name.trim()) newErrors.name = 'Nombre es requerido'
     if (!data.documentType.trim()) newErrors.documentType = 'Tipo de documento es requerido'
-    if (!data.document.trim()) newErrors.document = 'Documento es requerido'
+    if (!Number.isFinite(data.document) || data.document <= 0) newErrors.document = 'Documento es requerido'
     if (!data.phone.trim() || !phoneRegex.test(data.phone)) newErrors.phone = 'Teléfono inválido'
     if (!data.email.trim() || !emailRegex.test(data.email)) newErrors.email = 'Email inválido'
     if (!data.plateOrTicket.trim()) newErrors.plateOrTicket = 'Placa o tiquete es requerido'
@@ -75,6 +75,8 @@ export default function PqrPage() {
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
+
+  const [ticketId, setTicketId] = useState<string | null>(null)
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -92,15 +94,35 @@ export default function PqrPage() {
         setErrors((prev) => ({ ...prev, recaptcha: 'No pudimos validar el reCAPTCHA. Inténtalo nuevamente.' }))
         return
       }
-      // Aquí iría el envío a tu backend/API o servicio de correo
-      // Por ahora, simulamos éxito
-      await new Promise((r) => setTimeout(r, 800))
+      // Enviar PQR a API interna que integra con Power Automate
+      const formData = new FormData()
+      formData.append('name', data.name)
+      formData.append('documentType', data.documentType)
+      formData.append('document', String(data.document))
+      formData.append('phone', data.phone)
+      formData.append('email', data.email)
+      formData.append('plateOrTicket', data.plateOrTicket)
+      formData.append('date', data.date)
+      formData.append('place', data.place)
+      formData.append('description', data.description)
+      formData.append('recaptchaToken', recaptchaToken || '')
+      data.files.forEach((f) => formData.append('files', f))
+
+      const res = await fetch('/api/pqr', { method: 'POST', body: formData })
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok || !json?.success) {
+        setErrors((prev) => ({ ...prev, recaptcha: undefined }))
+        alert('No pudimos registrar tu PQR. Intenta nuevamente en unos minutos.')
+        return
+      }
+
+      setTicketId(json?.consecutivo ?? null)
       setSubmitted(true)
       // Limpieza opcional
       setData({
         name: '',
         documentType: '',
-        document: '',
+        document: NaN,
         phone: '',
         email: '',
         plateOrTicket: '',
@@ -133,6 +155,9 @@ export default function PqrPage() {
               <div className="text-center py-10">
                 <h2 className="text-2xl font-bold text-primary-600">¡Hemos recibido tu solicitud!</h2>
                 <p className="text-gray-600 mt-2">Te contactaremos pronto con la respuesta.</p>
+                {ticketId && (
+                  <p className="text-gray-800 font-semibold mt-4">Consecutivo: {ticketId}</p>
+                )}
                 <div className="mt-6">
                   <Button onClick={() => setSubmitted(false)}>Enviar otro PQR</Button>
                 </div>
@@ -172,7 +197,7 @@ export default function PqrPage() {
                     <input
                       type="number"
                       value={data.document}
-                      onChange={(e) => setData({ ...data, document: e.target.value })}
+                      onChange={(e) => setData({ ...data, document: Number(e.target.value) })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="1111111111"
                     />
