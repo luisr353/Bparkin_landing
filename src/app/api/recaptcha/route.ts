@@ -12,7 +12,12 @@ export async function POST(req: Request) {
       process.env.NEXT_RECAPTCHA_SECRET ||
       process.env.RECAPTCHA_SECRETKEY
 
-    if (!secret) {
+  // Bypass en desarrollo si no hay secreto o token
+  if (process.env.NODE_ENV !== 'production' && (!secret || !token)) {
+    return NextResponse.json({ success: true, bypass: true, reason: 'dev-bypass-no-secret-or-token' })
+  }
+
+  if (!secret) {
       return NextResponse.json(
         { success: false, error: 'Falta la variable de entorno del secreto de reCAPTCHA' },
         { status: 500 }

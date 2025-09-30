@@ -11,7 +11,7 @@ import Footer from '@/shared/components/layout/Footer'
 interface FormDataState {
   name: string
   documentType: string
-  document: number
+  document: string
   phone: string
   email: string
   plateOrTicket: string
@@ -38,7 +38,7 @@ export default function PqrPage() {
   const [data, setData] = useState<FormDataState>({
     name: '',
     documentType: '',
-    document: NaN,
+    document: '',
     phone: '',
     email: '',
     plateOrTicket: '',
@@ -60,10 +60,12 @@ export default function PqrPage() {
     const newErrors: FormErrorsState = {}
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     const phoneRegex = /^[0-9+\-()\s]{7,20}$/
+    const documentRegex = /^[0-9]{5,20}$/
 
     if (!data.name.trim()) newErrors.name = 'Nombre es requerido'
     if (!data.documentType.trim()) newErrors.documentType = 'Tipo de documento es requerido'
-    if (!Number.isFinite(data.document) || data.document <= 0) newErrors.document = 'Documento es requerido'
+    if (!data.document.trim()) newErrors.document = 'Documento es requerido'
+    else if (!documentRegex.test(data.document.trim())) newErrors.document = 'Documento inválido'
     if (!data.phone.trim() || !phoneRegex.test(data.phone)) newErrors.phone = 'Teléfono inválido'
     if (!data.email.trim() || !emailRegex.test(data.email)) newErrors.email = 'Email inválido'
     if (!data.plateOrTicket.trim()) newErrors.plateOrTicket = 'Placa o tiquete es requerido'
@@ -98,7 +100,7 @@ export default function PqrPage() {
       const formData = new FormData()
       formData.append('name', data.name)
       formData.append('documentType', data.documentType)
-      formData.append('document', String(data.document))
+      formData.append('document', data.document)
       formData.append('phone', data.phone)
       formData.append('email', data.email)
       formData.append('plateOrTicket', data.plateOrTicket)
@@ -122,7 +124,7 @@ export default function PqrPage() {
       setData({
         name: '',
         documentType: '',
-        document: NaN,
+        document: '',
         phone: '',
         email: '',
         plateOrTicket: '',
@@ -195,9 +197,9 @@ export default function PqrPage() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Documento</label>
                     <input
-                      type="number"
+                      type="text"
                       value={data.document}
-                      onChange={(e) => setData({ ...data, document: Number(e.target.value) })}
+                      onChange={(e) => setData({ ...data, document: e.target.value.replace(/[^0-9]/g, '') })}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="1111111111"
                     />

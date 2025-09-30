@@ -3,13 +3,19 @@ import { NextResponse } from 'next/server'
 // Node.js runtime (required for handling files comfortably)
 export const runtime = 'nodejs'
 
-async function verifyRecaptcha(token: string | null | undefined) {
+async function verifyRecaptcha(token: string | null | undefined, req?: Request) {
   const secret =
     process.env.RECAPTCHA_SECRET_KEY ||
     process.env.RECAPTCHA_SECRET ||
     process.env.NEXT_RECAPTCHA_SECRET ||
     process.env.RECAPTCHA_SECRETKEY
 
+  // Permitir bypass en local (host localhost/127.0.0.1) o en desarrollo si no hay secreto o token
+  const hostHeader = req?.headers.get('x-forwarded-host') || req?.headers.get('host') || ''
+  const isLocalHost = /localhost|127\.0\.0\.1|\[::1\]/i.test(hostHeader)
+  if ((process.env.NODE_ENV !== 'production' || isLocalHost) && (!secret || !token)) {
+    return { ok: true, raw: { bypass: true, reason: 'dev-bypass-no-secret-or-token' } }
+  }
   if (!secret) {
     return { ok: false, reason: 'Falta RECAPTCHA_SECRET_KEY' }
   }
@@ -29,7 +35,8 @@ async function verifyRecaptcha(token: string | null | undefined) {
   })
 
   const data = await res.json().catch(() => ({} as any))
-  return { ok: Boolean((data as any).success), raw: data }
+  const errorCodes = (data as any)["error-codes"] as string[] | undefined
+  return { ok: Boolean((data as any).success), raw: data, errorCodes }
 }
 
 export async function POST(req: Request) {
@@ -59,9 +66,12 @@ export async function POST(req: Request) {
     }
 
     // Validar reCAPTCHA
-    const recaptcha = await verifyRecaptcha(recaptchaToken)
+    const recaptcha = await verifyRecaptcha(recaptchaToken, req)
     if (!recaptcha.ok) {
-      return NextResponse.json({ success: false, error: 'Validación reCAPTCHA fallida' }, { status: 400 })
+      return NextResponse.json(
+        { success: false, error: 'Validación reCAPTCHA fallida', details: recaptcha.raw, errorCodes: recaptcha.errorCodes },
+        { status: 400 }
+      )
     }
 
     const flowUrl = process.env.PQR_FLOW_URL
