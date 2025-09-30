@@ -32,7 +32,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#servicios" className="text-gray-700 hover:text-primary-600 transition-colors">
-              Servicios
+              Parqueadero
             </a>
             <a href="#publicidadv" className="text-gray-700 hover:text-primary-600 transition-colors">
               Publicidad

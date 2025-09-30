@@ -42,7 +42,7 @@ export default function ContactSection() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               ¿Tienes preguntas sobre nuestros servicios? Estamos aquí para ayudarte. 
-              Contactanos por cualquiera de nuestros canales de comunicación.
+              Contáctanos por cualquiera de nuestros canales de comunicación.
             </p>
           </FadeIn>
         </div>
