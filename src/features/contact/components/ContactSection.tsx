@@ -23,12 +23,6 @@ export default function ContactSection() {
       details: 'Parqueadero Clinica Porto Azul Auna Sobre la carrera 51B, sobre el corredor universitario.',
       description: 'Fácil acceso'
     },
-    {
-      icon: Clock,
-      title: 'Horarios',
-      details: '24/7 Disponible',
-      description: 'Servicio continuo todos los días'
-    }
   ]
 
   return (
@@ -91,7 +85,7 @@ export default function ContactSection() {
                 </p>
                 <a
                   className="w-full inline-block text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                  href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria%20LED%20de%2011.1%20m²."
+                  href="https://api.whatsapp.com/send?phone=573108545652&text=Hola%2C%20estoy%20interesado%20en%20la%20pantalla%20publicitaria%20LED%20."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

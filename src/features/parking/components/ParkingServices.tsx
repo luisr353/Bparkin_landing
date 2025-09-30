@@ -82,6 +82,20 @@ export default function ParkingServices() {
               >
                 Ver Precios
               </Button>
+
+              <a
+                href="https://facturacionelectronicaparking.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white text-white hover:bg-blue-50 hover:text-primary-600 transition-base hover-raise"
+                >
+                  Solicitar Factura Electrónica
+                </Button>
+              </a>
             </div>
           </div>
           
