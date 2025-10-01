@@ -280,14 +280,13 @@ export default function PqrPage() {
                   <input
                     type="file"
                     accept="image/*,application/pdf"
-                    multiple
                     onChange={(e) => {
                       const files = e.target.files ? Array.from(e.target.files) : []
                       setData({ ...data, files })
                     }}
                     className="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"
                   />
-                  <p className="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, PDF. Máximo 10 archivos.</p>
+                  <p className="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, PDF.</p>
                 </div>
 
                 <div className="space-y-2">
