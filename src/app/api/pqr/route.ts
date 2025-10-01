@@ -80,9 +80,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Falta PQR_FLOW_URL en variables de entorno' }, { status: 500 })
     }
 
-    // Adaptar fecha al formato RFC3339 date-time si viene solo como YYYY-MM-DD
-    const dateTime = date && !date.includes('T') ? `${date}T00:00:00Z` : date
-
     // Cuerpo esperado por Power Automate según el esquema proporcionado
     const payload: any = {
       name,
@@ -91,7 +88,7 @@ export async function POST(req: Request) {
       phone,
       email,
       plateOrTicket,
-      date: dateTime,
+      date,
       place,
       description,
     }
