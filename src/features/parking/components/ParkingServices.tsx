@@ -135,7 +135,8 @@ export default function ParkingServices() {
                 <div className="text-white">
                   <h4 className="font-semibold mb-1">Ubicación Estratégica</h4>
                   <p className="text-blue-100 text-sm">
-                   Ingreso parqueadero Clinica Porto Azul Auna Sobre la carrera 51B, sobre el corredor universitario.
+                   Entrada1: Avenida Olaya Herrera, carrera 46 Clinica Porto Azul Auna. <br />
+                   Entrada2: Sobre el corredor universitario, Carrera 51B Clinica Porto Azul Auna.
                   </p>
                 </div>
               </div>
